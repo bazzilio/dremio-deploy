@@ -1,0 +1,33 @@
+{
+    "connectionMode": "PLAIN",
+    "servers": [
+        {
+            "hostname": "dc02m1.group.s7",
+            "port": 389
+        },
+        {
+            "hostname": "dc16m1.group.s7",
+            "port": 389
+        }
+    ],
+    "names": {
+        "bindDN": "CN=techlab-edp-dypr,OU=Users,OU=ООО «С7 ТЕХЛАБ»,OU=Company,DC=group,DC=s7",
+        "bindMethod": "SIMPLE_BIND",
+"        bindPassword": "ChangeMe",
+        "baseDN": "dc=group,dc=s7",
+        "userFilter": "&(objectClass=user)(|(memberOf=CN=edl-admin,OU=EDL,OU=Groups,DC=group,DC=s7)(memberOf=CN=edl-user,OU=EDL,OU=Groups,DC=group,DC=s7))",
+        "userAttributes": {
+            "baseDNs": [
+                "DC=group,DC=s7"
+            ],
+            "id": "sAMAccountName",
+            "firstname": "givenName",
+            "lastname": "sn",
+            "email": "mail"
+        },
+        "groupMembership": "memberOf",
+        "groupRecursive": "transitive-memberOf",
+        "groupFilter": "(objectClass=group)",
+        "autoAdminFirstUser": false
+     }
+}
