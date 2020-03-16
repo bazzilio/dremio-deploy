@@ -121,8 +121,8 @@ distStorage:
     filesystem: "Filesystem_in_storage_account"
     path: "/"
 
-#extraStartParams: >-
+extraStartParams: >-
+            -Ddremio.jdbc.mssql.push-collation.disable=true"
 #            -Dsaffron.default.charset=UTF-16LE
 #            -Dsaffron.default.nationalcharset=UTF-16LE
 #            -Dsaffron.default.collation.name=UTF-16LE$en_US
-#            -Ddremio.jdbc.mssql.push-collation.disable=true"

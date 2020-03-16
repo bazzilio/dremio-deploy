@@ -91,7 +91,7 @@
 
 # Extra Java options - shared between dremio and dremio-admin commands
 #
-#DREMIO_JAVA_EXTRA_OPTS=
+#DREMIO_JAVA_EXTRA_OPTS='-Ddremio.jdbc.mssql.push-collation.disable=true'
 
 # Extra Java options - client only (dremio-admin command)
 #
@@ -100,4 +100,4 @@
 # Extra Java options - server only (dremio command)
 #
 #DREMIO_JAVA_SERVER_EXTRA_OPTS=
-DREMIO_JAVA_SERVER_EXTRA_OPTS='-Dsaffron.default.charset=UTF-16LE -Dsaffron.default.nationalcharset=UTF-16LE -Dsaffron.default.collation.name=UTF-16LE$en_US -Ddremio.jdbc.mssql.push-collation.disable=true'
+DREMIO_JAVA_SERVER_EXTRA_OPTS='-Dsaffron.default.charset=UTF-16LE -Dsaffron.default.nationalcharset=UTF-16LE -Dsaffron.default.collation.name=UTF-16LE$en_US'
