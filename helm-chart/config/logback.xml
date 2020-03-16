@@ -96,7 +96,7 @@
   </if>
 
   <logger name="com.dremio">
-    <level value="${dremio.log.level:-debug}"/>
+    <level value="${dremio.log.level:-info}"/>
 <!--    <level value="${dremio.log.level:-info}"/> -->
 
   </logger>
@@ -111,7 +111,7 @@
   </logger>
 
   <logger name="com.dremio.exec.catalog.SourceMetadataManager" additivity="false">
-    <level value="${dremio.log.level:-debug}"/>
+    <level value="${dremio.log.level:-info}"/>
 <!--    <level value="${dremio.log.level:-info}"/> -->
     <if condition='isDefined("dremio.log.path")'>
       <then>

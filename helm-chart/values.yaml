@@ -3,19 +3,19 @@
 # the pods are using the same version of the software.
 #image: registry.techlab.s7.ru/edp/dremio-ee
 image: registry.techlab.s7.ru/edp/dremio-ee
-imageTag: 4.1.4-ssl
+imageTag: 4.1.8-ssl
 
 # Check out Dremio documentation for memory and cpu requirements for
 # the coordinators and the executors.
 # The value of memory should be in MB. CPU is in no of cores.
 coordinator:
   #memory: 122880
-  memory: 16384
+  memory: 65536
   cpu: 15
   # This count is for slave coordinators only.
   # The chart will always create one master coordinator - you are
   # not required to have more than one master coordinator.
-  count: 1
+  count: 0
   web:
     port: 9047
   client:
@@ -23,10 +23,10 @@ coordinator:
   volumeSize: 50Gi
 executor:
   #memory: 122880
-  memory: 16384
+  memory: 62536
   cpu: 15
-  count: 9
-  volumeSize: 50Gi
+  count: 8
+  volumeSize: 75Gi
   cloudCache:
     # Requires Dremio version 4.0.0 or later
     enabled: true
@@ -107,12 +107,12 @@ distStorage:
     bucketName: "edp-dremio"
     path: "/"
     accessKey: "edp-dremio-rw"
-    secret: "G2sLd0vIih7HjbsB6Js14tT8"
+    secret: "ChangeMe"
   azure: # ADLS gen1
     datalakeStoreName: "Your_Azure_DataLake_Storage_name"
     path: "/"
     applicationId: "Your_Azure_Application_Id"
-    secret: "Your_Azure_Secret"
+    secret: "ChangeMe"
     oauth2EndPoint: "Azure_OAuth2_Endpoint"
   azureStorage: # AzureStorage gen2v2
     accountName: "Azure_storage_v2_account_name"
@@ -120,3 +120,9 @@ distStorage:
 
     filesystem: "Filesystem_in_storage_account"
     path: "/"
+
+#extraStartParams: >-
+#            -Dsaffron.default.charset=UTF-16LE
+#            -Dsaffron.default.nationalcharset=UTF-16LE
+#            -Dsaffron.default.collation.name=UTF-16LE$en_US
+#            -Ddremio.jdbc.mssql.push-collation.disable=true"

@@ -26,6 +26,22 @@ spec:
       annotations:
         dremio-configmap/checksum: {{ (.Files.Glob "config/*").AsConfig | sha256sum }}
     spec:
+      hostAliases:
+      - ip: "172.20.13.230"
+        hostnames:
+        - "dl-prod-master-1"
+      - ip: "172.20.13.231"
+        hostnames:
+        - "dl-prod-data-1"
+      - ip: "172.20.13.104"
+        hostnames:
+        - "dl-prod-data-2"
+      - ip: "172.20.13.106"
+        hostnames:
+        - "dl-prod-data-3"
+      - ip: "172.20.13.124"
+        hostnames:
+        - "dl-prod-edge"
       securityContext:
         runAsUser: 999
         runAsGroup: 999
